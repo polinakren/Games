@@ -3,6 +3,7 @@ import { Typography } from 'antd';
 import { Palette } from '~utils/Palette';
 
 export const StyledCard = styled.div`
+  min-width: 30%;
   display: flex;
   flex-direction: column;
   padding: 28px;
@@ -28,6 +29,21 @@ export const StyledName = styled(Typography)`
 export const StyledImg = styled.img`
   width: 60%;
   border-radius: 50px;
+`;
+
+export const StyledScreen = styled.img`
+  width: 30%;
+  border-radius: 50px;
+`;
+
+export const ScreenBlock = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 28px;
+  border-radius: 50px;
+  background-color: white;
+  box-shadow: 0 0 14px 0 rgba(176, 165, 209, 0.4);
 `;
 
 export const Spacer = styled.div`

@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { notification } from 'antd';
 
 const GET_GAME = 'GET_GAME';
 
@@ -16,10 +17,15 @@ export const useGameCardApi = (id: string) => {
 
   const queryFn = async () => {
     const response = await fetch(url, options);
+
+    if (!response.ok) {
+      notification.error({ message: 'Failed to execute the request', placement: 'topRight', duration: 0 });
+    }
+
     return await response.json();
   };
 
-  const { data: game, isLoading } = useQuery(queryKey, queryFn);
+  const { data: game, isLoading } = useQuery(queryKey, queryFn, { retry: 3 });
 
   return {
     game,

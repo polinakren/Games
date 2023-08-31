@@ -1,10 +1,14 @@
 import { useParams } from 'react-router';
 import { ArrowLeftOutlined } from '@ant-design/icons';
+import { Spin } from 'antd';
+
 import {
+  ScreenBlock,
   Spacer,
   StyledCard,
   StyledImg,
   StyledName,
+  StyledScreen,
   StyledSystem,
   StyledSystemTitle,
   StyledTitle,
@@ -28,9 +32,10 @@ export default function Game() {
   return (
     <>
       {isLoading ? (
-        <></>
+        <Spin />
       ) : (
         <Spacer>
+          <ArrowLeftOutlined onClick={handleClick} />
           <StyledCard>
             <StyledImg src={game.thumbnail} alt={game.title} />
             <>
@@ -56,34 +61,38 @@ export default function Game() {
           </StyledCard>
 
           <StyledSystem>
-            <ArrowLeftOutlined onClick={handleClick} />
             <StyledSystemTitle>Minimum System Requirements (Windows)</StyledSystemTitle>
             <StyledCard>
               <div>
                 <StyledTitle>OS</StyledTitle>
-                <StyledName>Window 7 or later</StyledName>
+                <StyledName>{game.minimum_system_requirements.os}</StyledName>
               </div>
               <div>
                 <StyledTitle>Memory</StyledTitle>
-                <StyledName>2 GB</StyledName>
+                <StyledName>{game.minimum_system_requirements.memory}</StyledName>
               </div>
               <div>
                 <StyledTitle>Storage</StyledTitle>
-                <StyledName>1500 MB</StyledName>
+                <StyledName>{game.minimum_system_requirements.storage}</StyledName>
               </div>
               <div>
                 <StyledTitle>Processor</StyledTitle>
-                <StyledName>Dual core from Intel or AMD at 2.8 GHz</StyledName>
+                <StyledName>{game.minimum_system_requirements.processor}</StyledName>
               </div>
               <div>
                 <StyledTitle>Graphics</StyledTitle>
-                <StyledName>Intel HD 3000</StyledName>
+                <StyledName>{game.minimum_system_requirements.graphics}</StyledName>
               </div>
               <div>
                 <StyledTitle>Additional Notes</StyledTitle>
                 <StyledName>Specifications may change during development</StyledName>
               </div>
             </StyledCard>
+            <ScreenBlock>
+              {game.screenshots.map(screen => (
+                <StyledScreen src={screen.image} key={screen.id} alt={'screenshot'} />
+              ))}
+            </ScreenBlock>
           </StyledSystem>
         </Spacer>
       )}

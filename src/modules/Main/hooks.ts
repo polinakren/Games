@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query';
 import { FilterGames } from '~modules/Main/Main';
+import { notification } from 'antd';
 
 const GET_GAMES = 'GET_GAMES';
 
@@ -18,10 +19,15 @@ export const useGameApi = (req: FilterGames = {}) => {
 
   const queryFn = async () => {
     const response = await fetch(url, options);
+
+    if (!response.ok) {
+      notification.error({ message: 'Failed to execute the request', placement: 'topRight', duration: 0 });
+    }
+
     return await response.json();
   };
 
-  const { data: games, isLoading } = useQuery(queryKey, queryFn);
+  const { data: games, isLoading } = useQuery(queryKey, queryFn, { retry: 3 });
 
   return {
     games,

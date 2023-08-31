@@ -13,8 +13,11 @@ export const StyledCard = styled.div`
   cursor: pointer;
 `;
 
+export const DescBlock = styled.div`
+  margin-bottom: 20px;
+`;
+
 export const StyledTitle = styled(Typography)`
-  margin-top: 20px;
   color: ${Palette.white_600};
   font-size: 14px;
   font-weight: 500;

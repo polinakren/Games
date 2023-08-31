@@ -1,9 +1,9 @@
 import { useParams } from 'react-router';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Carousel, Spin } from 'antd';
+import { Spin } from 'antd';
 
 import {
-  ScreenBlock,
+  DescBlock,
   Spacer,
   StyledCard,
   StyledCarousel,
@@ -17,7 +17,6 @@ import {
 import { useGameCardApi } from '~modules/Game/hooks';
 import { useNavigate } from '~services/router/hooks';
 import { routeNames } from '~services/router';
-import { Key } from 'react';
 
 export default function Game() {
   const navigate = useNavigate();
@@ -65,22 +64,22 @@ export default function Game() {
           <StyledSystem>
             <StyledSystemTitle>Minimum System Requirements (Windows)</StyledSystemTitle>
             <StyledCard>
-              <div>
+              <DescBlock>
                 <StyledTitle>OS</StyledTitle>
                 <StyledName>{game.minimum_system_requirements.os}</StyledName>
-              </div>
-              <div>
+              </DescBlock>
+              <DescBlock>
                 <StyledTitle>Memory</StyledTitle>
                 <StyledName>{game.minimum_system_requirements.memory}</StyledName>
-              </div>
-              <div>
+              </DescBlock>
+              <DescBlock>
                 <StyledTitle>Storage</StyledTitle>
                 <StyledName>{game.minimum_system_requirements.storage}</StyledName>
-              </div>
-              <div>
+              </DescBlock>
+              <DescBlock>
                 <StyledTitle>Processor</StyledTitle>
                 <StyledName>{game.minimum_system_requirements.processor}</StyledName>
-              </div>
+              </DescBlock>
               <div>
                 <StyledTitle>Graphics</StyledTitle>
                 <StyledName>{game.minimum_system_requirements.graphics}</StyledName>

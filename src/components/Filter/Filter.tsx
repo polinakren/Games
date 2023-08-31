@@ -1,6 +1,7 @@
+import { Form, Radio } from 'antd';
+
 import { categories } from '~utils/categories';
 import { Spacer, StyledBlock, StyledRadio, StyledCheckboxTitle, StyledTitle } from './styles';
-import { Form, Radio } from 'antd';
 
 export interface GameFilterValues {
   category?: string;

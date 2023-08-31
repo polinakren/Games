@@ -1,7 +1,6 @@
-import { Spacer, StyledImg, StyledName, StyledTitle } from './styles';
-
 import { routeNames } from '~services/router';
 import { useNavigate } from '~services/router/hooks';
+import { Spacer, StyledImg, StyledName, StyledTitle } from './styles';
 
 export const GameCard = ({ game }: { game: Game }) => {
   const navigate = useNavigate();

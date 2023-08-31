@@ -33,9 +33,6 @@ function compilePath(path: string) {
   return generator;
 }
 
-/**
- * Generating a URI from a path and parameters.
- */
 function generateUri(path = '/', params = {}) {
   return compilePath(path)(params);
 }

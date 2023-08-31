@@ -28,7 +28,7 @@ export const Games = ({ games, isLoading, onFilterChange }: GamesProps) => {
   return (
     <Spacer>
       <SortBlock>
-        <StyledTitle>{isLoading ? `Games` : `Games (${games?.length})`}</StyledTitle>
+        <StyledTitle>{isLoading || !games?.length ? `Games` : `Games (${games?.length})`}</StyledTitle>
         <Dropdown
           menu={{
             items: items.map(item => ({ key: item.key, value: item.value, label: item.label })),

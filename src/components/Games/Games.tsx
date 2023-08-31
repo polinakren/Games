@@ -1,10 +1,9 @@
-import { Dropdown, Typography, MenuProps, Skeleton, Form, Menu } from 'antd';
+import { Dropdown, Typography, Skeleton } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 
 import { SortBlock, Spacer, StyledPagination, StyledSkeleton, StyledSort, StyledSpace, StyledTitle } from './styles';
 import { GamesList } from '../GamesList';
-import { StyledImg, StyledName } from '../GameCard/styles';
 import { GameFilterValues } from '../Filter';
 
 type GamesProps = {
@@ -20,7 +19,7 @@ export const Games = ({ games, isLoading, onFilterChange }: GamesProps) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  const displayedGames = games ? games?.slice(startIndex, endIndex) : [];
+  const displayedGames = games?.length ? games.slice(startIndex, endIndex) : [];
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);

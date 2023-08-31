@@ -30,7 +30,7 @@ export default function Game() {
 
   const { game, isLoading } = useGameCardApi(id!);
 
-  const new_release_date = new Date(game.release_date).toLocaleDateString();
+  const new_release_date = new Date(game?.release_date).toLocaleDateString();
 
   return (
     <>

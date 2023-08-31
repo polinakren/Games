@@ -43,6 +43,7 @@ export const StyledSystem = styled.div`
 `;
 
 export const StyledSystemTitle = styled(Typography)`
+  margin-bottom: 20px;
   color: ${Palette.secondary_800};
   font-size: 20px;
   font-weight: 865;

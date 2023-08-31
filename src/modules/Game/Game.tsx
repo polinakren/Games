@@ -1,11 +1,12 @@
 import { useParams } from 'react-router';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Spin } from 'antd';
+import { Carousel, Spin } from 'antd';
 
 import {
   ScreenBlock,
   Spacer,
   StyledCard,
+  StyledCarousel,
   StyledImg,
   StyledName,
   StyledScreen,
@@ -16,6 +17,7 @@ import {
 import { useGameCardApi } from '~modules/Game/hooks';
 import { useNavigate } from '~services/router/hooks';
 import { routeNames } from '~services/router';
+import { Key } from 'react';
 
 export default function Game() {
   const navigate = useNavigate();
@@ -83,16 +85,12 @@ export default function Game() {
                 <StyledTitle>Graphics</StyledTitle>
                 <StyledName>{game.minimum_system_requirements.graphics}</StyledName>
               </div>
-              <div>
-                <StyledTitle>Additional Notes</StyledTitle>
-                <StyledName>Specifications may change during development</StyledName>
-              </div>
             </StyledCard>
-            <ScreenBlock>
-              {game.screenshots.map(screen => (
+            <StyledCarousel autoplay>
+              {game.screenshots.map((screen: { image: string; id: number }) => (
                 <StyledScreen src={screen.image} key={screen.id} alt={'screenshot'} />
               ))}
-            </ScreenBlock>
+            </StyledCarousel>
           </StyledSystem>
         </Spacer>
       )}

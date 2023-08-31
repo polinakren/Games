@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { Typography } from 'antd';
+import { Carousel, Typography } from 'antd';
 import { Palette } from '~utils/Palette';
 
 export const StyledCard = styled.div`
-  min-width: 30%;
+  min-width: 20%;
   display: flex;
   flex-direction: column;
   padding: 28px;
@@ -63,4 +63,9 @@ export const StyledSystemTitle = styled(Typography)`
   color: ${Palette.secondary_800};
   font-size: 20px;
   font-weight: 865;
+`;
+
+export const StyledCarousel = styled(Carousel)`
+  margin-top: 20px;
+  width: 300px;
 `;

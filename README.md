@@ -28,11 +28,19 @@ Open [GitHub Pages](polinakren.github.io/games/)
 
 ## 🔨 Development
 
+Before starting the work, follow these steps:
+```bash
+npm install
+```
 ```bash
 npm start
 ```
 
 Open [http://localhost:3001](http://localhost:3001) in a browser.
+
+> Changes to files in the src and public folders will be tracked. That means after saving a file, the changes will be applied, and the web page will reload.
+
+> Changes to webpack configuration files and all other files will only take effect after rebuilding.
 
 ## ⌨️ Status
 To find out the status of the project, follow the link [Notion](https://www.notion.so/Test-task-c83e820d59cd444690422ef58c534a56?pvs=4)
